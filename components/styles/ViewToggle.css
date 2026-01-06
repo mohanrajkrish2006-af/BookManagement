@@ -1,0 +1,49 @@
+.view-toggle {
+  display: flex;
+  gap: var(--spacing-xs);
+  background-color: var(--color-background);
+  padding: var(--spacing-xs);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.view-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-sm) var(--spacing-base);
+  border: none;
+  background-color: transparent;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.view-toggle-btn:hover {
+  background-color: var(--color-card);
+  color: var(--color-text-primary);
+}
+
+.view-toggle-btn.active {
+  background-color: var(--color-card);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.view-toggle-btn:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.view-toggle-btn span {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .view-toggle-btn span {
+    display: inline;
+  }
+}

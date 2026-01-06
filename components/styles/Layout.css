@@ -1,0 +1,17 @@
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout-main {
+  flex: 1;
+  padding: var(--spacing-xl) 0;
+  animation: fadeIn var(--transition-base);
+}
+
+@media (min-width: 768px) {
+  .layout-main {
+    padding: var(--spacing-2xl) 0;
+  }
+}

@@ -1,0 +1,111 @@
+.dashboard {
+  animation: fadeIn var(--transition-base);
+}
+
+.dashboard-header {
+  margin-bottom: var(--spacing-2xl);
+}
+
+.dashboard-title {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.dashboard-subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-2xl);
+}
+
+@media (min-width: 640px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.dashboard-welcome {
+  margin-top: var(--spacing-2xl);
+}
+
+.welcome-card {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-2xl);
+  color: white;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+.welcome-card-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-card-illustration {
+  flex-shrink: 0;
+  opacity: 0.9;
+  animation: fadeIn var(--transition-slow) 0.3s both;
+}
+
+.welcome-card h2 {
+  color: white;
+  margin-bottom: var(--spacing-base);
+  font-size: var(--font-size-2xl);
+}
+
+.welcome-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .dashboard-title {
+    font-size: var(--font-size-3xl);
+  }
+
+  .welcome-card {
+    padding: var(--spacing-xl);
+  }
+
+  .welcome-card-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .welcome-card-illustration {
+    display: none;
+  }
+}
